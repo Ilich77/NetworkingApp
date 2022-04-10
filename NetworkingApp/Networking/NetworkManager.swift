@@ -37,4 +37,6 @@ class NetworkManager {
         }.resume()
     }
     
+    private init() {}
+    
 }
