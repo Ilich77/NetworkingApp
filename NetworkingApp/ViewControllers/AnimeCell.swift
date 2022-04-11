@@ -17,7 +17,7 @@ class AnimeCell: UITableViewCell {
     func configure(with anime: Anime) {
         animeNameLabel.text = anime.anime_name
         
-        NetworkManager.fetchAnimeImage(completion: { Data in
+        NetworkManager.shared.fetchAnimeImage(completion: { Data in
             DispatchQueue.main.async {
                 guard let Data = Data else { return }
                 self.animeIMG.image = UIImage(data: Data)

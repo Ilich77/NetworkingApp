@@ -35,12 +35,12 @@ class MainViewController: UITableViewController {
     // MARK: - Networking
 extension MainViewController {
     private func getData() {
-        NetworkManager.fetchAnimeList { animeList in
+        NetworkManager.shared.fetchAnimeList(completion: { animeList in
             DispatchQueue.main.async {
                 guard let animeList = animeList else { return }
                 self.animeList = animeList
                 self.tableView.reloadData()
             }
-        }
+        })
     }
 }
